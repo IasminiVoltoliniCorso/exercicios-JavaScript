@@ -20,6 +20,8 @@ class App extends Component {
         console.log('Atualizou!!!');
     }
 
+    //shouldComponentUpdate(){} utilizado com boleano
+
     render() {
         return (
             <div>
