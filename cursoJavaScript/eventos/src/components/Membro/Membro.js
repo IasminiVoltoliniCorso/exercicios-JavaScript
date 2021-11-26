@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
 
-class Membro extends Component{
+class Membro extends Component {
 
-    render(){
-        return(
+    constructor(props) {
+        super(props);
+        this.state = {
+            nome: props.nome
+        };
+        this.entrar = this.entrar.bind(this);
+    }
+
+    entrar() {
+        this.setState({ nome: 'Matheus' })
+    }
+
+    render() {
+        return (
             <div>
-                Membro
+                <h2>Bem-Vindo(a){this.state.nome}</h2>
+                <button onClick={this.entrar}>
+                    Entrar como Matheus
+                </button>
+                <button onClick={() => this.setState({ nome: '' })}>
+                    Sair
+                </button>
             </div>
         );
     }
