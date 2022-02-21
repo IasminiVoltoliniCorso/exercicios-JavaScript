@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Feed from './components/Feed';
 
 class App extends Component {
 
@@ -6,9 +7,10 @@ class App extends Component {
         super(props);
         this.state = {
             feed: [
-                { id: 1, username: 'Matheus', curtidas: 10, comentários: 2 },
-                { id: 2, username: 'Lucas', curtidas: 120, comentários: 24 },
-                { id: 3, username: 'Amanda', curtidas: 30, comentários: 12 },
+                { id: 1, username: 'Matheus', curtidas: 10, comentarios: 2 },
+                { id: 2, username: 'Lucas', curtidas: 120, comentarios: 24 },
+                { id: 3, username: 'Amanda', curtidas: 30, comentarios: 12 },
+                { id: 3, username: 'Henrique', curtidas: 1, comentarios: 0 },
             ]
         };
     }
@@ -19,14 +21,11 @@ class App extends Component {
 
                 {this.state.feed.map((item) => {
                     return (
-                        <div key={item.id}>
-                            <h3>{item.username}</h3>
-                            <a>{item.curtidas} curtidas /
-                                {item.comentários} comentários </a>
-                        </div>
+                        <Feed id={item.id} username={item.username}
+                            curtidas={item.curtidas}
+                            comentarios={item.comentarios} />
                     );
                 })}
-
             </div>
         );
     }
